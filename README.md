@@ -46,4 +46,4 @@ Com o docker rodando será possível acessar o Adminer no endpoint http://localh
 
 ## TO_DO
 
-* fazer regra de autenticação para usuários
+* fazer regra de autenticação para usuários (enquanto não tem isso da para navegar através das rotas do frontend)
