@@ -43,3 +43,7 @@ $ cd /client && ng serve
 ## Adminer
 
 Com o docker rodando será possível acessar o Adminer no endpoint http://localhost:8080/ e realizar o gerenciamento do conteúdo nos bancos de dados.
+
+## TO_DO
+
+* fazer regra de autenticação para usuários
