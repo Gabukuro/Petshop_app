@@ -1,0 +1,32 @@
+<form class="container mt-5 text-center" [formGroup]="editServiceForm">
+
+    <h1 class="mb-5 text-center">Novo Serviço</h1>
+    
+    <mat-form-field appearance="legacy">
+      <mat-label>Nome</mat-label>
+      <input type="string" matInput formControlName="title" placeholder="Nome do serviço">
+      <mat-icon matSuffix>turned_in_not</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="legacy">
+        <mat-label>Descrição</mat-label>
+        <textarea matInput formControlName="description" placeholder="Descrição de serviço..."></textarea>
+        <mat-icon matSuffix>subject</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="legacy">
+        <mat-label>Preço</mat-label>
+        <input currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }" type="string" matInput formControlName="price">
+        <mat-icon matSuffix>local_offer</mat-icon>
+    </mat-form-field>
+
+    <div class="row">
+        <div class="col">
+            <button mat-flat-button color="warn" (click)="removeService()">Deletar</button>
+        </div>
+        <div class="col">
+            <button mat-flat-button color="primary" (click)="saveService()">Salvar</button>
+        </div>
+    </div>
+  </form>
+    

@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="text-end mt-3 mb-3">
+      <button mat-flat-button color="primary" (click)="addJob()">Novo serviço</button>
+    </div>
+
+
+    <mat-card class="mb-3 shadow" style="border-left: 5px solid #3F51B5;" *ngFor="let job of jobs" (click)="editJob(job)">
+        <mat-card-title>
+          <div class="row">
+            <div class="col-8">{{ job.pet.name }}</div>
+            <div class="col-4">{{ job.totalPrice | currency: 'BRL' }}</div>
+          </div>
+        </mat-card-title>
+        <mat-card-subtitle>Agendado para: {{ job.scheduleTo | date: 'dd/MM/yyyy - hh:mm' }}</mat-card-subtitle>
+        <mat-card-content>
+          <p>Client: <span style="font-weight: 500;">{{ job.user.name }}</span></p>
+          <mat-list>
+            <h5 mat-header>Serviços: </h5>
+            <mat-list-item *ngFor="let service of job.services">
+              <p class="mb-0" matLine>{{ service.title }} - {{ service.price | currency: 'BRL' }}</p>
+            </mat-list-item>
+          </mat-list>
+        </mat-card-content>
+    </mat-card>
+
+</div>  

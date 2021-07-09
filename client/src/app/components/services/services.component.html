@@ -1,0 +1,16 @@
+<div class="container">
+
+  <div class="text-end mt-3 mb-3">
+    <button mat-flat-button color="primary" (click)="addService()">Novo Serviço</button>
+  </div>
+
+  <p *ngIf="services.length == 0" class="text-center">Ainda não há serviços cadastrados</p>
+
+  <mat-card class="mb-3 shadow" style="border-left: 5px solid #3F51B5;" *ngFor="let service of services" (click)="editService(service)">
+    <mat-card-title class="mb-0">{{ service.title }}</mat-card-title>
+    <mat-card-subtitle class="mb-0">{{ service.description }}</mat-card-subtitle>	
+    <mat-card-content>
+      <p class="text-end me-2 fs-5">{{ service.price | currency: 'BRL'}}</p>
+    </mat-card-content>
+  </mat-card>
+</div>

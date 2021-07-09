@@ -1,0 +1,60 @@
+<form class="container mt-5" [formGroup]="newJobForm">
+
+    <h1 class="mb-5 text-center">Novo Pet</h1>
+            
+    <mat-form-field appearance="legacy">
+        <mat-label>Data de serviço</mat-label>
+        <input matInput formControlName="scheduleTo" [ngxMatDatetimePicker]="picker">
+        <mat-datepicker-toggle matSuffix [for]="$any(picker)">
+            <mat-icon matDatepickerToggleIcon>today</mat-icon>
+        </mat-datepicker-toggle>
+        <ngx-mat-datetime-picker #picker 
+            [showSpinners]="true" [showSeconds]="false"
+            [stepHour]="1" [stepMinute]="1" [stepSecond]="1"
+            [touchUi]="false" [enableMeridian]="false"
+            [disableMinute]="false" [hideTime]="false"
+        >
+            <!-- Custom icon or text of Apply icon -->
+            <ng-template>
+            <!-- <mat-icon>star</mat-icon> -->
+                <span>OK</span>
+            </ng-template>
+        </ngx-mat-datetime-picker>
+    </mat-form-field>
+    
+    <mat-form-field appearance="legacy">
+      <mat-label>Cliente</mat-label>
+      <mat-select formControlName="user">
+        <mat-option *ngFor="let client of clients" value="{{client.id}}">{{client.name}}</mat-option>
+      </mat-select>
+      <mat-icon matSuffix>face</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="legacy">
+        <mat-label>Pet</mat-label>
+        <mat-select formControlName="pet">
+          <mat-option *ngFor="let pet of pets" value="{{pet.id}}">{{pet.name}}</mat-option>
+        </mat-select>
+        <mat-icon matSuffix>pets</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="legacy">
+        <mat-label>Serviços</mat-label>
+        <mat-select formControlName="services" multiple>
+          <mat-option *ngFor="let service of services" value="{{service.id}}">{{service.title}}</mat-option>
+        </mat-select>
+        <mat-icon matSuffix>work</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="legacy">
+        <mat-label>Observações</mat-label>
+        <textarea matInput formControlName="notes" placeholder="Gosta de carinho..."></textarea>
+        <mat-icon matSuffix>subject</mat-icon>
+      </mat-form-field>  
+  
+    <div class="row mx-4">
+      <button mat-flat-button color="primary" (click)="saveJob()">Salvar</button>
+    </div>
+    
+  </form>
+    

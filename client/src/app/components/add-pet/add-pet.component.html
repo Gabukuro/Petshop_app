@@ -1,0 +1,51 @@
+<form class="container mt-5" [formGroup]="newPetForm">
+
+  <h1 class="mb-5 text-center">Novo Pet</h1>
+  
+  <mat-form-field appearance="legacy">
+    <mat-label>Nome</mat-label>
+    <input type="string" matInput formControlName="name" placeholder="Luke">
+    <mat-icon matSuffix>pets</mat-icon>
+  </mat-form-field>
+  
+  <mat-form-field appearance="legacy">
+    <mat-label>Tipo</mat-label>
+    <input type="string" matInput formControlName="type" placeholder="Cachorro">
+    <mat-icon matSuffix>pets</mat-icon>
+  </mat-form-field>  
+
+  <mat-form-field appearance="legacy">
+    <mat-label>Raça</mat-label>
+    <input type="string" matInput formControlName="breed" placeholder="Vira latinha">
+    <mat-icon matSuffix>pets</mat-icon>
+  </mat-form-field>  
+
+  <mat-form-field appearance="legacy">
+    <mat-label>Data de aniversário</mat-label>
+    <input matInput formControlName="birthDate" [matDatepicker]="picker">
+    <mat-datepicker-toggle matSuffix [for]="picker">
+      <mat-icon matDatepickerToggleIcon>cake</mat-icon>
+    </mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field appearance="legacy">
+    <mat-label>Observações</mat-label>
+    <textarea matInput formControlName="observations" placeholder="Gosta de carinho..."></textarea>
+    <mat-icon matSuffix>pets</mat-icon>
+  </mat-form-field>  
+
+  <mat-form-field appearance="legacy">
+    <mat-label>Cliente</mat-label>
+    <mat-select formControlName="user">
+      <mat-option *ngFor="let client of clients" value="{{client.id}}">{{client.name}}</mat-option>
+    </mat-select>
+    <mat-icon matSuffix>face</mat-icon>
+  </mat-form-field>
+
+  <div class="row mx-4">
+    <button mat-flat-button color="primary" (click)="savePet()">Salvar</button>
+  </div>
+  
+</form>
+  

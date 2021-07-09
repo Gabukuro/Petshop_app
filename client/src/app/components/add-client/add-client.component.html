@@ -1,0 +1,21 @@
+<form class="container mt-5" [formGroup]="newClientForm">
+
+    <h1 class="mb-5 text-center">Novo Client</h1>
+    
+    <mat-form-field appearance="legacy">
+      <mat-label>Nome</mat-label>
+      <input type="string" matInput formControlName="name" placeholder="Luke">
+      <mat-icon matSuffix>face</mat-icon>
+    </mat-form-field>
+      
+    <mat-form-field appearance="legacy">
+      <mat-label>Email</mat-label>
+      <input type="string" matInput formControlName="email" placeholder="client@email.com">
+      <mat-icon matSuffix>email</mat-icon>
+    </mat-form-field>  
+  
+    <div class="row mx-4">
+      <button mat-flat-button color="primary" (click)="saveClient()">Salvar</button>
+    </div>
+    
+  </form>

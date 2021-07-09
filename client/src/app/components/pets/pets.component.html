@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="text-end mt-3 mb-3">
+      <button mat-flat-button color="primary" (click)="addPet()">Novo pet</button>
+    </div>
+
+    <p *ngIf="pets.length == 0" class="text-center">Nenhum pet cadastrado</p>
+
+    <mat-card matRipple class="mb-3 shadow" style="border-left: 5px solid #3F51B5;" *ngFor="let pet of pets" (click)="editPet(pet)">
+      <mat-card-title class="mb-0">{{ pet.name }}</mat-card-title>
+      <mat-card-subtitle class="mb-0">{{ pet.type }}</mat-card-subtitle>	
+    </mat-card>
+
+</div>

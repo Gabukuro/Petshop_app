@@ -1,0 +1,29 @@
+<mat-drawer-container class="menu" autosize>
+    <mat-drawer #drawer class="sidenav" mode="over">
+        
+        <h3 class="text-center mt-3">Petshop App</h3>
+
+
+        <mat-divider></mat-divider>
+
+        <mat-list class="mt-4">
+            <a *ngFor="let page of appPages" [routerLink]="page.url" (click)="currenPageTitle = page.title">
+                <mat-list-item>
+                    <mat-icon class="me-2" style="color: #3F51B5">{{page.icon}}</mat-icon>
+                    <span style="font-weight: 500;">{{page.title}}</span>
+                </mat-list-item>
+            </a>
+           </mat-list>
+    </mat-drawer>
+  
+    <div class="example-sidenav-content">
+        <mat-toolbar>
+            <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="drawer.toggle()">
+                <mat-icon>menu</mat-icon>
+            </button>
+            <span class="capitalize">{{currenPageTitle}}</span>
+        </mat-toolbar>
+
+        <router-outlet></router-outlet>
+    </div>
+</mat-drawer-container>

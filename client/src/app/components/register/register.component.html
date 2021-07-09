@@ -1,0 +1,56 @@
+<form class="container px-5 mt-5" [formGroup]="registerForm">
+
+    <h1 class="mb-5 text-center">Cadastrar</h1>
+
+    <mat-form-field appearance="legacy">
+        <mat-label>Nome</mat-label>
+        <input type="email" matInput formControlName="name" placeholder="Placeholder">
+        <mat-icon matSuffix>face</mat-icon>
+        <!-- <mat-error *ngIf="email.hasError('email') && !email.hasError('required')">
+          Por favor, insira um email válido
+        </mat-error>
+        <mat-error *ngIf="email.hasError('required')">
+          Email é <strong>obrigatório</strong>
+        </mat-error> -->
+    </mat-form-field>
+  
+    <mat-form-field appearance="legacy">
+      <mat-label>Email</mat-label>
+      <input type="email" matInput formControlName="email" placeholder="Placeholder">
+      <mat-icon matSuffix>email</mat-icon>
+      <!-- <mat-error *ngIf="email.hasError('email') && !email.hasError('required')">
+        Por favor, insira um email válido
+      </mat-error>
+      <mat-error *ngIf="email.hasError('required')">
+        Email é <strong>obrigatório</strong>
+      </mat-error> -->
+    </mat-form-field>
+  
+    <mat-form-field appearance="legacy">
+      <mat-label>Senha</mat-label>
+      <input matInput [type]="hidePassword ? 'password' : 'text'" formControlName="password">
+      <div mat-icon-button matSuffix (click)="hidePassword = !hidePassword" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidePassword">
+        <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </div>
+      <!-- <mat-error *ngIf="password.hasError('required')">
+        Senha é <strong>obrigatória</strong>
+      </mat-error> -->
+    </mat-form-field>
+
+    <mat-form-field appearance="legacy">
+        <mat-label>Confirmar Senha</mat-label>
+        <input matInput [type]="hideConfirmPassword ? 'password' : 'text'" formControlName="confirmPassword">
+        <div mat-icon-button matSuffix (click)="hideConfirmPassword = !hideConfirmPassword" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hideConfirmPassword">
+          <mat-icon>{{hideConfirmPassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </div>
+        <!-- <mat-error *ngIf="password.hasError('required')">
+          Senha é <strong>obrigatória</strong>
+        </mat-error> -->
+      </mat-form-field>
+
+    <div class="row mx-4">
+      <button mat-flat-button color="primary">Cadastrar</button>
+    </div>
+  
+  </form>
+  
