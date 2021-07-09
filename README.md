@@ -32,8 +32,14 @@ $ cd /client && npm install
 # start docker
 $ docker compose up -d
 
-# startwatch mode
+# inicar servidor
 $ cd /server && npm run start:dev
+
+# iniciar frontend
 $ cd /client && ng serve
 
 ```
+
+## Adminer
+
+Com o docker rodando será possível acessar o Adminer no endpoint http://localhost:8080/ e realizar o gerenciamento do conteúdo nos bancos de dados.
